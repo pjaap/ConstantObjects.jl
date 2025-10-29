@@ -1,0 +1,13 @@
+name = "ConstantObjects"
+uuid = "8d64ce72-1fa3-4536-ae10-90f26e6209a4"
+authors = ["Patrick Jaap <patrick.jaap@wias-berlin.de> and contributors"]
+version = "0.1.0"
+
+[compat]
+julia = "1.10"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
