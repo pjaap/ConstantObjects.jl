@@ -99,7 +99,7 @@ Pretty simple: we wrap an object by the wrapper type `Const`. We implement `setp
 All `getproperty` calls are forwarded to the `_stored_object`, except the call for this object itself.
 The return values of `getproperty` are passed through `make_const` and are also made constant.
 
-Julia's own types which fulfill `isbitstype` are excluded from the `Const` wrapper in `make_const`, since those objects already have the desired properties [by design](https://docs.julialang.org/en/v1[...]).
+Julia's own types which fulfill `isbitstype` are excluded from the `Const` wrapper in `make_const`, since those objects already have the desired properties [by design](https://docs.julialang.org/en/v1/base/base/#Base.isbitstype).
 
 Hence, `make_const(42)` will simply return `42` and `make_const("mutable_string")` will add the `Const` type, since the string is mutable.
 
