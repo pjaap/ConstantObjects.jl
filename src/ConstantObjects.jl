@@ -55,6 +55,9 @@ end
 Base.setproperty!(c::Const{T}, s::Symbol) where {T} = error("setproperty! is not allowed for a ConstantObject")
 Base.setindex!(c::Const{T}, args...) where {T} = error("setindex! is not allowed for a ConstantObject")
 
+# constant objects are equal if the stored objects are equal
+Base.:(==)(c1::Const{T1}, c2::Const{T2}) where {T1, T2} = c1._stored_object == c2._stored_object
+
 
 ## Base functions that we trust ##
 for f in [
